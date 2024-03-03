@@ -7,22 +7,7 @@ const loadCard = async () =>
     displayPosts(posts);
 }
 
-const showingMode = post =>
-{
-  const showMode = document.getElementById('showMode')
-  if(post.isActive)
-  {
-    showMode.classList=`
-    mode
-    `
-  }
-  else
-  {
-    showMode.classList=`mode
-    `
 
-  }
-}
 const displayPosts = posts =>
 {
     console.log(posts);
@@ -33,12 +18,11 @@ const displayPosts = posts =>
             // creating posts
             const postCard = document.createElement('div')
             postCard.classList = `card w-[600px] bg-base-100 shadow-xl flex flex-row items-center`;
-           
+            
             postCard.innerHTML = `
             <div><figure class="px-10 pt-10">
-            <img  src="${post.image}" alt="Shoes" class="w-max"/>
-            <div id="showMode">
-            </div>
+            <img src="${post.image}" alt="Shoes" class="w-max rounded-lg"/>
+            
           </figure></div>
             
           <div class="card-body items-center text-center ">
@@ -77,7 +61,25 @@ const displayPosts = posts =>
             
             `;
             postContainer.appendChild(postCard);
+            showingMode(post,postCard);
         })
 
 }
+
+const showingMode = (post,postCard) => {
+  const showMode = postCard.querySelector('figure');
+  
+  const dot = document.createElement('div');
+  dot.classList.add('mode');
+  
+  if (post.isActive) {
+      dot.classList.add('green');
+  } else {
+      dot.classList.add('red');
+  }
+  
+  showMode.appendChild(dot);
+}
+
+
 loadCard();

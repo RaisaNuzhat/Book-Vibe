@@ -1,7 +1,16 @@
-.mode
-{
-    height: 1px;
-    width: 1px;
+.mode {
+    position: absolute;
+    top: 103px;
+    right: 422px;
+    width: 10px;
+    height: 10px;
     border-radius: 50%;
-    color: green;
+}
+
+.green{
+    background-color: green;
+}
+
+.red{
+    background-color: red;
 }
