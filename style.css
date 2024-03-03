@@ -1,5 +1,7 @@
-.banner
+.mode
 {
-    background-image:    url(./images/first.png);
-    height: 550px; 
+    height: 1px;
+    width: 1px;
+    border-radius: 50%;
+    color: green;
 }

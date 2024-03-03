@@ -18,9 +18,10 @@
 </head>
 <body>
    
-    <header class="container mx-auto my-10">
-        <div class="navbar bg-base-100">
-            <div class="navbar-start">
+    <header class="my-10">
+        <div class="navbar bg-base-100 justify-evenly container mx-auto ">
+            
+            <div class="navbar-start"> 
                 <!-- small device -->
               <div class="dropdown"> 
                 <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
@@ -39,36 +40,37 @@
                 </ul>
               </div>
               <!-- small device -->
-              <a class="btn btn-ghost text-xl font-extrabold ">ReTro</a>
+              <a class="btn btn-ghost font-extrabold text-3xl ">ReTro</a>
             </div>
             <div class="navbar-center hidden lg:flex">
               <ul class="menu menu-horizontal px-1 parent">
-                <li><a  class="tooltip" data-tip="hello">
-                    <i class="fa-solid fa-house"></i>
+                <li><a  class="tooltip bg-neutral-100 rounded-full" data-tip="hello">
+                    <i class="fa-solid fa-house "></i>
                 </a>
                </li>
                 <li>
-                 <a  class="tooltip" data-tip="hello">
+                 <a  class="tooltip bg-neutral-100 rounded-full" data-tip="hello">
                     <i class="fa-solid fa-pen"></i>
                 </a>
                 </li>
-                <li><a  class="tooltip" data-tip="hello">
+                <li><a  class="tooltip bg-neutral-100 rounded-full" data-tip="hello">
                     <i class="fa-solid fa-user"></i>
                 </a>
                 </li>
-                <li><a  class="tooltip" data-tip="hello">
+                <li><a  class="tooltip bg-neutral-100 rounded-full" data-tip="hello">
                     <i class="fa-solid fa-flag"></i>
                 </a>
                 </li>
               </ul>
             </div>
             <div class="navbar-end">
-              <a class="btn">Sign Up</a>
+              <a class="btn bg-[#797DFC] text-white text-xl">Sign In</a>
             </div>
           </div>
     </header>
     <main class="container mx-auto">
-        <section class="my-8">
+        <!-- banner section starts -->
+        <section class="my-4">
             <img  class="mx-auto" src="./images/first.png" alt="">
             <div class="flex items-center justify-evenly lg:-translate-y-96 -translate-y-36 px-6">
         
@@ -77,7 +79,7 @@
                         Welcome to the <br><span class="text-[#797DFC]">ReTro </span>Forum
                     </h1>
                     <p class="text-[#FFFFFF] text-xl m-2">Share your favorite opinion and win and wp forum coffee mug!</p>
-                    <label class="input input-bordered flex items-center gap-2 m-2">
+                    <label class="input input-bordered flex items-center gap-2 my-4">
                         <input type="text" class="grow" placeholder="Search here anything"/>
                         <span class="badge badge-info bg-[#797DFC] h-3/4 w-2/5">Search</span>
                       </label>
@@ -108,6 +110,34 @@
                 </div>
             </div>
         </section>
+        <!-- let's discuss section starts-->
+        <section class="my-6 text-center container mx-auto">
+            <h3 class="text-4xl font-bold text-[#12132D] m-3">Let’s Discuss</h3>
+            <p class="text-xl text-neutral-400 m-2">Yes, you can run unit tests and view the results directly within the app. 
+                The integrated testing features allow for a streamlined .</p>
+            <div class="my-3 container mx-auto flex items-center justify-evenly">
+                <div class="flex flex-col gap-4" id="post-container">
+                    
+                </div>
+
+            <div></div>
+            </div>
+
+        </section>
+        <section class="container mx-auto my-6">
+            <img class="mx-auto" src="./images/first.png" alt="">
+            <div class="flex items-center  lg:-translate-y-96 justify-center gap-4">
+              <div class="">
+                <h1 class="text-white font-bold text-5xl my-3">Join Our Forum</h2>
+                  <p class="text-[20px] text-white text-left">Share your favorite opinion and win and wp forum coffee mug! 
+                    Yes, you can <br> run unit tests and view the results directly within the app.</p>
+                    <button class="rounded-full bg-[#797DFC] my-4 w-2/5 h-8 text-white font-bold">
+                      Register Now
+                    </button>
+              </div>
+              <div class=""><img src="./images/joinforum.png" alt=""></div>
+            </div>
+        </section>
     </main>
     <footer></footer>
 
@@ -115,3 +145,7 @@
    <script src="./app.js"></script>
 </body>
 </html>
+
+<div id="showMode">
+
+</div>
