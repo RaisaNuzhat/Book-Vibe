@@ -17,7 +17,7 @@ const displayPosts = posts =>
             const postContainer = document.getElementById('post-container')
             // creating posts
             const postCard = document.createElement('div')
-            postCard.classList = `card w-[600px] bg-base-100 shadow-xl flex flex-row items-center`;
+            postCard.classList = `card w-full bg-base-100 shadow-xl flex flex-row items-center`;
             
             postCard.innerHTML = `
             <div><figure class="px-10 pt-10">
@@ -62,8 +62,31 @@ const displayPosts = posts =>
             `;
             postContainer.appendChild(postCard);
             showingMode(post,postCard);
+            postCard.querySelector('#card-button').addEventListener('click', () => {
+              const count=document.getElementById('count');
+
+              countInc = parseInt(count.innerText);
+              countInc++;
+              count.innerText = countInc.toString();
+              readCount(post);
+          });
         })
 
+}
+const readCount = (post) =>
+{
+    console.log(post);
+    const readpostContainer = document.getElementById('post-read-container');
+    const readPost = document.createElement('div')
+    readPost.classList =`card w-[600px] bg-white shadow-xl flex flex-row items-center p-4`;
+    readPost.innerHTML = `
+    <h2 class="card-title text-[#12132D] font-semibold text-[18px] m-2 w-1/2">${post.title}</h2>
+    <div class="flex flex-row gap-3 flex-1 justify-evenly">
+                 <span><i class="fa-solid fa-eye"></i></span>
+                 <p id="view-count">1,568</p>
+     </div>
+    `
+    readpostContainer.appendChild(readPost)
 }
 
 const showingMode = (post,postCard) => {
@@ -92,6 +115,8 @@ const loadLatest = async () =>
       })
   
 }
+
+
 
 const displayLatest = latestPost =>
 {

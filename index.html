@@ -115,12 +115,20 @@
             <h3 class="text-4xl font-bold text-[#12132D] m-3">Let’s Discuss</h3>
             <p class="text-xl text-neutral-400 m-2">Yes, you can run unit tests and view the results directly within the app. 
                 The integrated testing features allow for a streamlined .</p>
-            <div class="my-3 container mx-auto flex lg:flex-row flex-col  items-center lg:justify-evenly">
-                <div class="flex flex-col gap-4  " id="post-container">
+            <div class="my-3 container mx-auto flex lg:flex-row flex-col  items-start  lg:justify-evenly">
+                <div class="flex flex-col gap-4  w-2/5" id="post-container">
                     
                 </div>
 
-            <div></div>
+            <div id="post-read-container" class="flex flex-col gap-3 bg-neutral-100 p-4 rounded-lg w-2/5">
+
+                <div class="p-4 flex flex-row justify-evenly">
+                    <h3 class="text-[#12132D] font-bold text-2xl">Title</h3>
+                    <a class="text-green-400"><i class="fa-solid fa-check-double"></i></a>
+                    <p class="text-neutral-400 text-xl">Mark as read</p>
+                    <span id="count">0</span>
+                </div>
+            </div>
             </div>
 
         </section>
