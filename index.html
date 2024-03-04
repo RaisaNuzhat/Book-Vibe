@@ -80,8 +80,8 @@
                     </h1>
                     <p class="text-[#FFFFFF] text-xl m-2">Share your favorite opinion and win and wp forum coffee mug!</p>
                     <label class="input input-bordered flex items-center gap-2 my-4">
-                        <input type="text" class="grow" placeholder="Search here anything"/>
-                        <button class="w-2/5 bg-[#797DFC] rounded-lg h-7">Search</button>
+                        <input  id="search-text" type="text" class="grow" placeholder="Search here anything"/>
+                        <button class="w-2/5 bg-[#797DFC] rounded-lg h-7" id="handlesearch" onclick="handleSearch()">Search</button>
                       </label>
                       
                 </div>
@@ -110,13 +110,20 @@
                 </div>
             </div>
         </section>
+      
+
         <!-- let's discuss section starts-->
         <section class="my-6 text-center container mx-auto">
-            <h3 class="text-4xl font-bold text-[#12132D] m-3">Let’s Discuss</h3>
-            <p class="text-xl text-neutral-400 m-2">Yes, you can run unit tests and view the results directly within the app. 
+            <h3 class="text-4xl font-bold text-[#12132D] my-6">Let’s Discuss</h3>
+            <p class="text-xl text-neutral-400 my-6">Yes, you can run unit tests and view the results directly within the app. 
                 The integrated testing features allow for a streamlined .</p>
+                <div class="text-center my-10 hidden" id="spinner">
+                  <!-- spinner -->
+                  <span class="loading loading-bars loading-lg"></span>
+              </div>
             <div class="my-3 container mx-auto flex lg:flex-row flex-col  items-start  lg:justify-evenly">
-                <div class="flex flex-col gap-4  w-2/5" id="post-container">
+            
+                <div class="flex flex-col gap-4  w-2/5 " id="post-container">
                     
                 </div>
 

@@ -60,6 +60,7 @@ const displayPosts = posts =>
          </div>
             
             `;
+
             postContainer.appendChild(postCard);
             showingMode(post,postCard);
             postCard.querySelector('#card-button').addEventListener('click', () => {
@@ -71,6 +72,7 @@ const displayPosts = posts =>
               readCount(post);
           });
         })
+          setTimeout(()=> toggleLoadingSpinner(false),3000)
 
 }
 const readCount = (post) =>
@@ -103,6 +105,50 @@ const showingMode = (post,postCard) => {
   
   showMode.appendChild(dot);
 }
+const handleSearch = async () =>
+{
+    console.log("clicked")
+    toggleLoadingSpinner(true);
+    const searchField = document.getElementById('search-text')
+    const searchText = searchField.value;
+    console.log(searchText);
+    if( searchText !== '')
+    {
+      try
+      {
+        const res = await fetch(`https://openapi.programming-hero.com/api/retro-forum/posts?category=${searchText}`)
+        const data = await res.json();
+        clearPost();
+        
+        displayPosts(data.posts);
+
+      }
+      catch(error)
+      {
+        console.error("oopsssssss error ashcheeeee");
+      }
+    }
+    else {
+      loadCard();
+    }
+}
+const clearPost = () => {
+  const postContainer = document.getElementById('post-container');
+  postContainer.innerHTML = '';
+}
+const toggleLoadingSpinner = (isLoading) =>
+{
+  const loadingSpinner = document.getElementById('spinner')
+  if(isLoading)
+  {
+    loadingSpinner.classList.remove('hidden')
+  }
+  else
+  {
+    loadingSpinner.classList.add('hidden')
+  }
+  
+}
 const loadLatest = async () =>
 {
     const res =  await fetch('https://openapi.programming-hero.com/api/retro-forum/latest-posts');
@@ -115,9 +161,6 @@ const loadLatest = async () =>
       })
   
 }
-
-
-
 const displayLatest = latestPost =>
 {
       const latest = latestPost;
