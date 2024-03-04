@@ -17,7 +17,7 @@ const displayPosts = posts =>
             const postContainer = document.getElementById('post-container')
             // creating posts
             const postCard = document.createElement('div')
-            postCard.classList = `card w-full bg-base-100 shadow-xl flex flex-row items-center`;
+            postCard.classList = `card w-full  bg-base-100 shadow-xl flex lg:flex-row flex-col items-center`;
             
             postCard.innerHTML = `
             <div><figure class="px-10 pt-10">
@@ -26,29 +26,29 @@ const displayPosts = posts =>
           </figure></div>
             
           <div class="card-body items-center text-center ">
-          <div class="flex flex-row items-center m-2 gap-10">
+          <div class="flex lg:flex-row flex-col items-center m-2 gap-10">
              <p>#   <span>${post.category}</span> </p>
              <p>author: <span>${post.author.name}</span> </p>
           </div>
            <h2 class="card-title text-[#12132D] font-semibold text-[18px] m-2">${post.title}</h2>
-           <p class="m-2">It’s one thing to subject yourself to ha Halloween costume mishap because, hey that’s your prerogative</p>
+           <p class="m-2">${post.description}</p>
            <!-- main -->
-           <div class="flex flex-row justify-between items-center gap-10"> 
+           <div class="flex lg:flex-row flex-col justify-between items-center gap-10"> 
              <!-- main 1-->
 
              <div class="flex flex-row gap-4">
                <div class="flex flex-row gap-3">
                  <span><i class="fa-solid fa-message"></i></span>
-                 <p> 560</p>
+                 <p>${post.comment_count}</p>
                </div>
                  
                <div class="flex flex-row gap-3">
                  <span><i class="fa-solid fa-eye"></i></span>
-                 <p id="view-count">1,568</p>
+                 <p id="view-count">${post.view_count}</p>
                </div>
                <div class="flex flex-row gap-3">
                  <span><i class="fa-regular fa-clock"></i></span>
-                 <p id="view-count">1,568</p>
+                 <p id="view-count">${post.posted_time}</p>
                </div>
                  
              </div>
@@ -80,7 +80,7 @@ const readCount = (post) =>
     console.log(post);
     const readpostContainer = document.getElementById('post-read-container');
     const readPost = document.createElement('div')
-    readPost.classList =`card w-[600px] bg-white shadow-xl flex flex-row items-center p-4`;
+    readPost.classList =`card w-full bg-white shadow-xl flex flex-row items-center p-4`;
     readPost.innerHTML = `
     <h2 class="card-title text-[#12132D] font-semibold text-[18px] m-2 w-1/2">${post.title}</h2>
     <div class="flex flex-row gap-3 flex-1 justify-evenly">
@@ -177,8 +177,8 @@ const displayLatest = latestPost =>
     <div class="card-body items-center text-center">
       <p class="text-left text-neutral-400"><span><i class="fa-regular fa-calendar"></i></span>
       ${latest.author?.posted_date ? latest.author.posted_date : 'No Publish Date'}</p>
-      <h3 class="text-center font-bold text-[#12132D] text-xl">What will a mars habitat force that impact in our daily life!!!</h3>
-      <p class="text-center text-neutral-400">Yes, you can run unit tests and view the results directly within the app. </p>
+      <h3 class="text-center font-bold text-[#12132D] text-xl">${latest.title}</h3>
+      <p class="text-center text-neutral-400">${latest.description}</p>
       <div class="flex flex-row items-center justify-evenly gap-8 ">
         <img   class="w-20 h-20 rounded-full"  src="${latest.profile_image}" alt="">
         <div >

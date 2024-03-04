@@ -27,33 +27,42 @@
                 <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
                   <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
                 </div>
-                <ul tabindex="0" class="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
-                  <li><a>Item 1</a></li>
-                  <li>
-                    <a>Parent</a>
-                    <ul class="p-2">
-                      <li><a>Submenu 1</a></li>
-                      <li><a>Submenu 2</a></li>
-                    </ul>
-                  </li>
-                  <li><a>Item 3</a></li>
+                <ul tabindex="0" class="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow gap-2 bg-base-100 rounded-box w-52">
+                <li><a  class="tooltip bg-neutral-100 rounded-full" data-tip="Home">
+                    <i class="fa-solid fa-house "></i>
+                </a>
+               </li>
+               <li>
+                <a  class="tooltip bg-neutral-100 rounded-full" data-tip="Edit">
+                   <i class="fa-solid fa-pen"></i>
+               </a>
+               </li>
+               <li><a  class="tooltip bg-neutral-100 rounded-full" data-tip="User">
+                <i class="fa-solid fa-user"></i>
+               </a>
+               </li>
+               <li><a  class="tooltip bg-neutral-100 rounded-full" data-tip="hello">
+                <i class="fa-solid fa-flag"></i>
+            </a>
+            </li>
+                  
                 </ul>
               </div>
               <!-- small device -->
-              <a class="btn btn-ghost font-extrabold text-3xl ">ReTro</a>
+              <a class="btn btn-ghost font-extrabold text-3xl ">Retro Visions</a>
             </div>
             <div class="navbar-center hidden lg:flex">
               <ul class="menu menu-horizontal px-1 parent">
-                <li><a  class="tooltip bg-neutral-100 rounded-full" data-tip="hello">
+                <li><a  class="tooltip bg-neutral-100 rounded-full" data-tip="Home">
                     <i class="fa-solid fa-house "></i>
                 </a>
                </li>
                 <li>
-                 <a  class="tooltip bg-neutral-100 rounded-full" data-tip="hello">
+                 <a  class="tooltip bg-neutral-100 rounded-full" data-tip="Edit">
                     <i class="fa-solid fa-pen"></i>
                 </a>
                 </li>
-                <li><a  class="tooltip bg-neutral-100 rounded-full" data-tip="hello">
+                <li><a  class="tooltip bg-neutral-100 rounded-full" data-tip="User">
                     <i class="fa-solid fa-user"></i>
                 </a>
                 </li>
@@ -71,37 +80,36 @@
     <main class="container mx-auto">
         <!-- banner section starts -->
         <section class="my-4">
-            <img  class="mx-auto" src="./images/first.png" alt="">
-            <div class="flex items-center justify-evenly lg:-translate-y-96 -translate-y-36 px-6">
-        
+            <img  class=" mx-auto" src="./images/first.png" alt="">
+            <div class="flex  lg:flex-row items-center justify-evenly lg:-translate-y-96  -translate-y-60 lg:px-6 px-2">
                 <div id="one">
-                    <h1 class="text-left text-6xl font-bold text-[#FFFFFF] m-2">
+                    <h1 class="text-left lg:text-6xl text-xl lg:font-bold text-[#FFFFFF] lg:m-2">
                         Welcome to the <br><span class="text-[#797DFC]">ReTro </span>Forum
                     </h1>
-                    <p class="text-[#FFFFFF] text-xl m-2">Share your favorite opinion and win and wp forum coffee mug!</p>
-                    <label class="input input-bordered flex items-center gap-2 my-4">
+                    <p class="text-[#FFFFFF] text-xl lg:m-2 m-auto">Share your favorite opinion and win and wp forum coffee mug!</p>
+                    <label class="input input-bordered flex items-center gap-2 lg:my-4 ">
                         <input  id="search-text" type="text" class="grow" placeholder="Search here anything"/>
-                        <button class="w-2/5 bg-[#797DFC] rounded-lg h-7" id="handlesearch" onclick="handleSearch()">Search</button>
+                        <button class="lg:w-2/5 w-1/2 bg-[#797DFC] text-white rounded-lg lg:h-7" id="handlesearch" onclick="handleSearch()">Search</button>
                       </label>
                       
                 </div>
                
                 <div id="two">
-                    <div class="card w-96 bg-base-100 shadow-xl">
-                        <div class="card-body flex flex-col">
+                    <div class="card lg:w-80 w-30 bg-base-100 shadow-xl ">
+                        <div class="card-body flex ">
                          <div class="flex items-center justify-between">
                             <div><p>Registered Users</p></div>
                             <div>01</div>
                          </div>
-                         <div class="flex items-center justify-between">
+                         <div class="flex  items-center justify-between">
                             <div><p>Forum</p></div>
                             <div>05</div>
                          </div>
-                         <div class="flex items-center justify-between">
+                         <div class="flex  items-center justify-between">
                             <div><p>Topics</p></div>
                             <div>01</div>
                          </div>
-                         <div class="flex items-center justify-between">
+                         <div class="flex  items-center justify-between">
                             <div><p>Replies</p></div>
                             <div>01</div>
                          </div>
@@ -114,20 +122,20 @@
 
         <!-- let's discuss section starts-->
         <section class="my-6 text-center container mx-auto">
-            <h3 class="text-4xl font-bold text-[#12132D] my-6">Let’s Discuss</h3>
-            <p class="text-xl text-neutral-400 my-6">Yes, you can run unit tests and view the results directly within the app. 
+            <h3 class="text-4xl font-bold text-[#12132D] my-6 p-2">Let’s Discuss</h3>
+            <p class="text-xl text-neutral-400 my-6 p-2">Yes, you can run unit tests and view the results directly within the app. 
                 The integrated testing features allow for a streamlined .</p>
                 <div class="text-center my-10 hidden" id="spinner">
                   <!-- spinner -->
                   <span class="loading loading-bars loading-lg"></span>
               </div>
-            <div class="my-3 container mx-auto flex lg:flex-row flex-col  items-start  lg:justify-evenly">
+            <div class="my-3 container mx-auto flex lg:flex-row flex-col  lg:items-start items-center lg:justify-evenly">
             
-                <div class="flex flex-col gap-4  w-2/5 " id="post-container">
+                <div class="flex flex-col gap-4 mx-auto w-2/5 " id="post-container">
                     
                 </div>
 
-            <div id="post-read-container" class="flex flex-col gap-3 bg-neutral-100 p-4 rounded-lg w-2/5">
+            <div id="post-read-container" class="flex flex-col gap-3 bg-neutral-100 p-4 rounded-lg lg:w-2/5 mx-auto my-2">
 
                 <div class="p-4 flex flex-row justify-evenly">
                     <h3 class="text-[#12132D] font-bold text-2xl">Title</h3>
@@ -141,10 +149,10 @@
         </section>
         <section class="container mx-auto my-6">
             <img class="mx-auto" src="./images/first.png" alt="">
-            <div class="flex items-center  lg:-translate-y-96 justify-center gap-4">
+            <div class="flex items-center p-2 lg:-translate-y-96 -translate-y-60 justify-center gap-4">
               <div class="">
-                <h1 class="text-white font-bold text-5xl my-3">Join Our Forum</h2>
-                  <p class="text-[20px] text-white text-left">Share your favorite opinion and win and wp forum coffee mug! 
+                <h1 class="text-white font-bold lg:text-5xl text-xl  lg:my-3">Join Our Forum</h2>
+                  <p class="lg:text-[20px] text-white text-left">Share your favorite opinion and win and wp forum coffee mug! 
                     Yes, you can <br> run unit tests and view the results directly within the app.</p>
                     <button class="rounded-full bg-[#797DFC] my-4 w-2/5 h-8 text-white font-bold">
                       Register Now
@@ -165,9 +173,8 @@
     </main>
     <footer>
       <footer class="footer footer-center p-10 bg-base-200 text-base-content rounded ">
-         <h2 class="text-center font-extrabold text-2xl text-[#12132D]">ReTro</h2>
-         <p class="text-center text-neutral-400">Contrary to popular belief, Lorem Ipsum is not simply random text. 
-          It has roots in a piece of classical Latin literature from 45 BC</p>
+         <h2 class="text-center font-extrabold text-2xl text-[#12132D]">Retro Visions</h2>
+         <p class="text-center text-neutral-400">Explore With Retro Visions. <br> Join Our Community & Dive into The Realm With Us!</p>
         <nav class="p-4 w-4/5 border-solid border-b-2">
           
             <div class="grid grid-cols-4 gap-4">
