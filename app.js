@@ -80,6 +80,49 @@ const showingMode = (post,postCard) => {
   
   showMode.appendChild(dot);
 }
+const loadLatest = async () =>
+{
+    const res =  await fetch('https://openapi.programming-hero.com/api/retro-forum/latest-posts');
+    const data = await res.json();
+    data.forEach(dataa =>
+      {
+        const latestPost = dataa;
+        console.log(latestPost);
+        displayLatest(latestPost)
+      })
+  
+}
 
-
+const displayLatest = latestPost =>
+{
+      const latest = latestPost;
+      console.log(latest);
+      const latestContainer = document.getElementById('latespost-Container');
+      const latestCard = document.createElement('div');
+      latestCard.classList = `
+      card w-96 bg-base-100 shadow-xl
+      `
+      latestCard.innerHTML = `
+      <figure class="px-10 pt-10">
+      <img src="${latest.cover_image}" alt="Shoes" class="rounded-xl" />
+    </figure>
+    <div class="card-body items-center text-center">
+      <p class="text-left text-neutral-400"><span><i class="fa-regular fa-calendar"></i></span>
+      ${latest.author?.posted_date ? latest.author.posted_date : 'No Publish Date'}</p>
+      <h3 class="text-center font-bold text-[#12132D] text-xl">What will a mars habitat force that impact in our daily life!!!</h3>
+      <p class="text-center text-neutral-400">Yes, you can run unit tests and view the results directly within the app. </p>
+      <div class="flex flex-row items-center justify-evenly gap-8 ">
+        <img   class="w-20 h-20 rounded-full"  src="${latest.profile_image}" alt="">
+        <div >
+          <h3 class="font-bold text-[#12132D]">${latest.author.name}</h3>
+          <p class="text-neutral-400">${latest.author?.designation ? latest.author.designation : 'Unknown'}
+          </p>
+        </div>
+      </div>
+    </div>
+      
+      `
+      latestContainer.appendChild(latestCard)
+}
 loadCard();
+loadLatest();
